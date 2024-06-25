@@ -1,0 +1,36 @@
+import java.util.Random;
+import java.util.Scanner;
+
+public class ChouQian {
+   public static void main(String[] args){
+	   
+	   System.out.println("您想去的城市的描述：请在临海、草原、雪地、高山中选择一个");
+	   Scanner input = new Scanner(System.in);
+	   String a = input.next();
+	   
+	   // 初始化options数组
+	   String[] options = {};
+	   
+	   if (a.equals("临海")){
+		   options = new String[]{"台州府城","灵湖公园"};
+	   } else if(a.equals("高山")){
+		   options = new String[]{"括苍山","泰山"};
+	   } else if(a.equals("草原")){
+		   options = new String[]{"鄂尔多斯草原","贡格尔草原"};
+	   } else if(a.equals("雪地")){
+		   options = new String[]{"老君山","哈尔滨"};
+	   } else {
+	       System.out.println("输入不合法，请输入临海、草原、雪地或高山");
+	       System.exit(1); // 退出程序
+	   }
+	   
+	   // 创建一个随机数生成器
+	   Random random = new Random();
+	   
+	   // 生成一个随机索引，范围是 0 到 options.length - 1
+	   int index = random.nextInt(options.length);
+	   
+	   // 输出
+	   System.out.println("抽到的旅游景点是：" + options[index]);
+   }
+}
